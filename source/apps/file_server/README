@@ -1,0 +1,4 @@
+This app was created to allow admin users to upload files into the server through a GUI.
+The main functionality of the app is that files can be managed, so the database holds 
+all the information of each file, allowing other apps gather this info reagrdless of the
+OS.
