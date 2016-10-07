@@ -1,0 +1,152 @@
+{{ forms.user_form.non_field_errors }}
+{{ forms.user_profile_form.non_field_errors }}
+{% if not user.is_authenticated %}
+<script>
+function CheckId() {
+$.get('{% url 'DaneUsers:isUsernameRegistered' %}', {username: $("#id_email").val()},
+    function(data){
+        if(data == "True"){
+            $('#idval').html("Este correo ya ha sido registrado, si desea puede acceder con su cuenta <a href={% url 'DaneUsers:login' %}>aquí</a>");
+        } else {
+            if($("#id_email").val().split("@").slice(-1)[0].toLowerCase() == "dane.gov.co"){
+                $('#idval').html("Si usted es funcionario del DANE puede acceder directamente con su cuenta <a href={% url 'DaneUsers:login' %}>aquí</a>");
+            } else {
+                $('#idval').html("")
+            }
+        }
+});
+}
+function onChange(){
+ $("#id_email").change( function() {CheckId()});
+}
+$(document).ready(onChange);
+</script>    
+<h4>Nombre de usuario</h4>
+<div class="row form-group-registro">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div id="idval"></div>
+        {{ forms.user_form.email.errors }}
+        {{ forms.user_form.email }}
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        {{ forms.user_form.password.errors }}
+        {{ forms.user_form.password }}
+    </div>
+</div>
+{% endif %}
+<h4>Nombre</h4>
+<div class="row form-group-registro">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        {{ forms.user_form.first_name.errors }}
+        {{ forms.user_form.first_name }}
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        {{ forms.user_form.last_name.errors }}
+        {{ forms.user_form.last_name }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="row form-group-registro">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <h4>Departamento</h4>
+                {{ forms.user_profile_form.departament.errors }}
+                {{ forms.user_profile_form.departament }}
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12"> 
+                <h4>Ciudad</h4>
+                {{ forms.user_profile_form.city.errors }}
+                {{ forms.user_profile_form.city }}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+{% if forms.user_profile_form.id_doc or forms.user_profile_form.id_doc%}
+    <div class="col-md-8 col-sm-12 col-xs-12">
+        <h4>Documento de identificación</h4>
+        <div class="row form-group-registro">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                {{ forms.user_profile_form.id_type.errors }}
+                {{ forms.user_profile_form.id_type }}
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                {{ forms.user_profile_form.id_doc.errors }}
+                {{ forms.user_profile_form.id_doc }}
+            </div>
+        </div>
+    </div>
+{% endif %}   
+{% if forms.user_profile_form.place_of_birth%}
+    <div class="col-md-4 col-sm-12 col-xs-12">
+        <h4>País de nacimiento</h4>
+        <div class="row form-group-registro">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                {{ forms.user_profile_form.place_of_birth.errors }}            
+                {{ forms.user_profile_form.place_of_birth }}            
+            </div>
+        </div>
+    </div>
+{% endif %}
+</div>
+
+
+<div class="row">
+{% if forms.user_profile_form.age_range %}
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <h4>Rango de edad</h4>
+        <div class="row form-group-registro">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                {{ forms.user_profile_form.age_range.errors }}         
+                {{ forms.user_profile_form.age_range }}         
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% if forms.user_profile_form.gender %}
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <h4>Sexo</h4>
+        <div class="row form-group-registro">
+            <div class="col-md-12 col-sm-12 col-xs-12">                
+                {{ forms.user_profile_form.gender.errors }}         
+                {{ forms.user_profile_form.gender }}         
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% if forms.user_profile_form.cellphone or forms.user_profile_form.alternative_mail %}
+</div>
+<h4>Información de contacto</h4>
+<div class="row form-group-registro">
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        {{ forms.user_profile_form.cellphone.errors }}   
+        {{ forms.user_profile_form.cellphone }}   
+    </div>
+    <div class="col-md-8 col-sm-8 col-xs-12">
+        {{ forms.user_profile_form.alternative_mail.errors}}  
+        {{ forms.user_profile_form.alternative_mail}}  
+    </div>
+</div>
+{% endif %}
+{% if forms.user_profile_form.activity or forms.user_profile_form.education %}
+<h4>Ocupación</h4>
+<div class="row form-group-registro">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        {{ forms.user_profile_form.activity.errors}}  
+        {{ forms.user_profile_form.activity}}  
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        {{ forms.user_profile_form.education.errors}}                 
+        {{ forms.user_profile_form.education}}                 
+    </div>
+</div>
+{% endif %}
+<h4>Discapacidades</h4>
+<div class="row form-group-registro">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        {{ forms.user_profile_form.disability.errors}}  
+        {{ forms.user_profile_form.disability}}  
+    </div>
+</div>
+<input type="hidden" name="next" id="id_next" value="{%if next %}{{next}}{% endif %}" />

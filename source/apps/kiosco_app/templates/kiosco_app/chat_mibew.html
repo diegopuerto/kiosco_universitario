@@ -1,0 +1,37 @@
+<style type="text/css">
+    .chat-widget {
+        bottom: 0;
+        box-sizing: border-box;
+        color: #6c4c44;
+        direction: ltr;
+        display: block;
+        font-size: 14px;
+        height: 65px;
+        left: auto;
+        position: fixed;
+        right: 15px;
+        width: auto;
+        z-index: 30;
+    }
+</style>
+
+<div class="chat-widget">
+    <!-- mibew button -->
+    <a id="mibew-agent-button" href="http://formularios.dane.gov.co/chatsoporte/index.php/chat?locale=es&amp;style=default&amp;group=3" target="_blank" } onclick="Mibew.Objects.ChatPopups['565f46b5386a4ae3'].open();return false;">
+        <img src="http://formularios.dane.gov.co/chatsoporte/index.php/b?i=chatpw&amp;lang=es&amp;group=3" border="0" alt="" />
+    </a>
+    <script type="text/javascript" src="http://formularios.dane.gov.co/chatsoporte/js/compiled/chat_popup.js"></script>
+    <script type="text/javascript">
+        Mibew.ChatPopup.init({
+            "id": "565f46b5386a4ae3",
+            "url": "http:\/\/formularios.dane.gov.co\/chatsoporte\/index.php\/chat?locale=es&style=default&group=3",
+            "preferIFrame": true,
+            "modSecurity": false,
+            "height": 480,
+            "width": 640,
+            "resizable": true,
+            "styleLoader": "http:\/\/formularios.dane.gov.co\/chatsoporte\/index.php\/chat\/style\/popup\/default"
+        });
+    </script>
+    <!-- / mibew button -->
+</div>

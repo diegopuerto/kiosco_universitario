@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="container">
+<div class="row">
+    <div class="col-md-8 col-sm-8 col-xs-8 col-centered  block-text-title bienvenida">
+        <h1 class="text-center">Estimado ciudadano</h1>
+        <h3>Gracias por registrarte en nuestro sitio,<br> a partir de ahora puedes empezar a hacer uso de nuestros servicios.</h3>
+    </div>
+    <div class="col-md-8 col-sm-8 col-xs-8 col-centered">
+    <br><h4>En este momento hemos enviado un mensaje a tu cuenta de correo para que verifiques que has quedado
+registrado correctamente en nuestro sistema. Por favor ingresa a tu cuenta y
+sigue el vínculo de verificación incluido en el correo electrónico.</h4>
+    </div>         
+ </div>
+  <div class="row text-center">
+  <div class=" registro-exitoso col-md-3 col-sm-3 col-xs-10 col-centered">
+ 
+{#   <div class="mensaje-validacion center-block col-centered">   #}
+{#    <p class="r-exitoso">Un correo de confirmación se ha enviado al correo electrónico registrado. #}
+{#Para poder continuar el proceso de registro, siga las instrucciones.</p>#}
+    
+{#   </div>#}
+      
+      
+      <div class="row col-centered ">
+            <a href = {% url 'kiosco_app:home' %}> 
+      <div class=" botones-registro-exitoso text-center col-md-12 col-sm-12 col-xs-12">
+ 
+      <button type="submit" class="btn btn-default acceder">Seguir navegando</button>
+      </div>
+      </a>
+      <a href = {% url 'DaneUsers:logout' %}>  
+      <div class="botones-registro-exitoso text-center col-md-12 col-sm-12 col-xs-12">
+
+      <button type="submit" class="btn btn-default registrarse">Salir</button>
+      </div>
+            </a>
+      </div> 
+
+</div>
+</div>
+</div>
+  
+{% endblock %}

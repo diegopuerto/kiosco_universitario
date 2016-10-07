@@ -1,0 +1,11 @@
+{% extends "services_requests/requests_base.html" %}
+{% block subtitle_form %} Solicitud Sala de Procesamiento Especializado {% endblock %}
+{% block url_post  %}{% url 'services_requests:specializedChamber' %}{% endblock %}
+{% block service_name %}sala de Procesamiento Especializado{% endblock %}
+{% block form_name %}Solicitud de Servicio Sala de Procesamiento Especializado{% endblock form_name %}
+{% block request_form %}
+       <div class="col-md-12 col-sm-12 col-xs-12">
+        {{ forms.services_request_form.detail.errors }}
+        {{ forms.services_request_form.detail }}
+      </div>
+{% endblock %}

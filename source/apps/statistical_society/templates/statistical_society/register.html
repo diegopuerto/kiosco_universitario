@@ -1,0 +1,26 @@
+{% extends "services_requests/requests_base.html" %}
+{% load statistical_society_extras %}
+{% block subtitle_form %} Sociedad de la estadística {% endblock %}
+{% block url_post  %}{% url 'statistical_society:register_user' %}{% endblock %}
+{% block form_name %}Preferencias del usuario{% endblock form_name %}
+{% block request_form %}
+	<div class="form-preferencias">
+		{% for field in forms.user_preferences_form.visible_fields %}
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				{% if field.field.widget|klass == "TextInput" %}
+					<h4> {{field.label}}  </h4>
+					   {{ field.errors }}
+					   {{ field }}
+				{% elif field.field.widget|klass == "CheckboxInput" %}
+				     <div>
+				         <h4>
+		                   {{field.label}}
+		                   {{ field.errors }}
+		                   {{ field }}
+		                 </h4>
+	                 </div>
+				{% endif %}
+			 </div>            
+		{% endfor %}
+	</div>     
+{% endblock %}

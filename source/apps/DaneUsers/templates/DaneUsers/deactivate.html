@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+  <div class="row"><br><br><br>
+    <div  class="col-md-6 col-sm-8 col-xs-11 col-centered block-information">
+        <form id="deactivate_form" method="post" action={% url 'DaneUsers:deactivate' %}>
+            {% csrf_token %}
+            <h2 class="text-center login">Desactivar cuenta</h2>
+            <h5 class="text-center">{{ user.first_name }}, para desactivar tu cuenta <br>debes primero ingresar tu correo electrónico y contraseña</h5><br>
+      <div class="form-group has-feedback has-feedback-left">
+        <input class="form-control" type="email" name="email" id="exampleInputEmail1 inputSuccess1" placeholder="{% trans "e-mail" %}">
+        <i class="glyphicon glyphicon-user form-control-feedback"></i>
+      </div>
+      <div class="form-group has-feedback has-feedback-left .has-error .has-success">
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="{% trans  "password"  %}">
+         <i class="glyphicon glyphicon-star form-control-feedback"></i>
+      </div>
+        </form>
+        
+        <a href = {% url "DaneUsers:deactivate" %}>
+			<div class="botones-logged text-center col-md-5 col-sm-6 col-xs-6 col-centered">
+              <button type="submit" value="submit" class="btn btn-default registrarse">Darse de baja</button>
+              </div>
+		</a>
+	
+	</div>
+  </div><br><br><br><br><br>
+</div>
+
+ {% endblock %}
+ 

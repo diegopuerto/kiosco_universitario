@@ -1,0 +1,11 @@
+#changelist-filter {
+    width: 180px;}
+    
+#changelist-filter ul{
+    columns: 3;
+   -webkit-columns: 3;
+   -moz-columns: 3;}
+   
+.selected a{
+    text-decoration: underline;
+}

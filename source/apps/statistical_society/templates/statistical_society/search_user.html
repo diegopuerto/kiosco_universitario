@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<style type="text/css">
+
+  table td{
+    border: 10px solid white;
+  }
+</style>
+<div class="container" >
+	<form action="{% url 'statistical_society:search_user' %}" method="POST">
+	
+	    {% csrf_token %}
+	    {{search_form.as_p}}
+	    <button type="submit">Submit</button>
+	</form>    
+  <table>
+        <tr>
+           <td> cedula</td>
+           <td> nombre</td>
+           <td> pertenece a la sociedad </td>
+        </tr>
+	  {% for user in users %}
+	    <tr>
+	       <td>{{user.Cedula}}</td>
+	       <td>{{user.name}}</td>
+	       <td>{% if user.belongs_to_SE %} Si {% else %} No {% endif %}</td>
+	    </tr>
+	  {% endfor %}
+  </table>
+</div>
+ {% endblock %}

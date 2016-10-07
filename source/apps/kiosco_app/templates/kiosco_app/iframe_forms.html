@@ -1,0 +1,22 @@
+      <!-- Modal -->
+      <div class="modal fade" id="{{urldata.id}}" role="dialog">
+        <div class="modal-dialog modal-lg">
+        
+          <!-- Modal content-->
+          <div class="modal-content modal-form center-block">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">{{urldata.title}}</h4>
+            </div>
+            <div class="modal-body">
+                <div align="center">
+                    <iframe src="{{urldata.url}}" scrolling="no" width="{{ width | default:600}}" height="{{ height | default:600}}" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>

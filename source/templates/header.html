@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<div class="container">
+    
+                <div class="col-md-3 pull-right boton_acceso-registro">
+                  <!-- FECHA <div class="row" id="fecha">
+            		    <div class="row"> <small class="today_display pull-right"></small> </div>
+           				<div class="clearfix"></div>
+         		   </div>
+          		    ICO PUERTA <a href="{% url 'DaneUsers:logout' %}" target="_blank" alt="Salir">
+          			<div id="icon-net" class="logout"></div>
+          		   </a> -->
+                   <p>{% if user.is_authenticated %}
+                       <a class="userIco" href="{% url 'DaneUsers:logged' %}"> <img src="{% static "img/ico_09.png" %}" alt="Portal de Consulta Rápida"></a>&nbsp;&nbsp;Bienvenido, <a href="{% url 'DaneUsers:logged' %}"> {{ user.first_name }}</a>&nbsp;&nbsp; 
+                        <a class="homeIco" href="{% url 'kiosco_app:home' %}"><img src="{% static "img/ico_12.png" %}" alt="Volver al inicio"></a>&nbsp;&nbsp; <a class="logoutIco" href="{% url 'DaneUsers:logout' %}"><img src="{% static "img/ico_10.png" %}" alt="Cerrar sesión"></a>
+                        {% else %}
+                        <a href="{% url 'DaneUsers:login' %}">Acceder</a>&nbsp;&nbsp;|
+                        <a href="{% url 'DaneUsers:registerUser' %}">Registrarse</a><a class="homeIco" href="{% url 'kiosco_app:home' %}">&nbsp;&nbsp;<img src="{% static "img/ico_12.png" %}" alt="Volver al inicio"></a>
+                        {% endif %}
+                    </p>
+                </div>
+
+{% include "fixedmenu.html" %}
+

@@ -1,0 +1,192 @@
+{% load staticfiles %}
+<html lang="es">
+    <head>
+        <style type="text/css">
+            html {
+            overflow: hidden;
+            }
+        </style>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Departamento Administrativo Nacional de Estadística (DANE)</title>
+        <!--TODO: Insertar título de la página en este campo-->
+        <link href="{% static "img/favicon2.png" %}" rel="shortcut icon" type="image/vnd.microsoft.icon">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %}">
+        <link rel="stylesheet" href="{% static "css/custom.css" %}">
+        <link rel="stylesheet" href="{% static "css/main.css" %}">
+        <link rel="stylesheet" href="{% static "css/main-home.css" %}">
+        <!-- Latest compiled and minified JavaScript -->
+        <script type="text/javascript" src="{% static "js/jquery-1.11.0.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/dane_utils.js" %}"></script>
+        {% include "expire-session-metadata.html" %}
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container-fluid contenedor-home fondo-home">
+            <div class="container">
+                <div class="col-md-3 pull-right boton_acceso-registro">
+                    <p>{% if user.is_authenticated %}
+                       <a class="userIco" href="{% url 'DaneUsers:logged' %}"> <img src="{% static "img/ico_09.png" %}" alt="Portal de Consulta Rápida"></a>&nbsp;&nbsp;Bienvenido, <a href="{% url 'DaneUsers:logged' %}"> {{ user.first_name }}</a>
+                        <a href="{% url 'DaneUsers:logout' %}">&nbsp;&nbsp; <a class="logoutIco" href="{% url 'DaneUsers:logout' %}"><img src="{% static "img/ico_10.png" %}" alt="Cerrar sesión"></a></a>
+                        {% else %}
+                        <a href="{% url 'DaneUsers:login' %}">Acceder</a>&nbsp;&nbsp;|
+                        <a href="{% url 'DaneUsers:registerUser' %}">Registrarse</a>
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- CONTENIDO -->    
+            <div class="container contenido-home">
+               <!--<div class="col-md-4 row">
+                
+              </div>  
+                <div class="clearfix"></div>
+              <div class="navegacion-home">--> 
+                    
+                        <div class="navbar-indicadores col-md-3">
+                            <div class="imagen-portal col-md-12"><h1>Bienvenidos al <br><b>Portal de Consulta Rápida del DANE</b></h1></div>
+                            <nav class="navbar navbar-default col-md-12" role="navigation" id="cssmenu">
+                                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{% static "img/solicitud-en-linea.gif" %}">Solicitudes en línea<b class="caret"></b></a>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                {% for urldata in forms_urls %}
+                                                <li >
+                                                    <a type="button"  data-toggle="modal" data-target="#{{urldata.id}}" style="cursor: pointer;" >
+                                                    {{urldata.title}}
+                                                    </a>
+                                                </li>
+                                                {% endfor %} 
+                                                <li >
+                                                    <a type="button"  data-toggle="modal" data-target="#{{orfeo_follow.id}}" style="cursor: pointer;" >
+                                                    {{orfeo_follow.title}}
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{% static "img/solicitud-servicios.gif" %}">Solicitud de servicios<b class="caret"></b></a>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li><a href="{% url 'services_requests:specializedChamber' %}">Sala de procesamiento especializado</a></li>
+                                                <li><a href="{% url 'services_requests:statisticalCulture' %}">Programas de Cultura estadística</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a type="button"  data-toggle="modal" data-target="#{{geoportal.id}}" style="cursor: pointer;">
+                                            <img src="{% static "img/geoportal.gif" %}">{{geoportal.title}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /.navbar-collapse -->
+                            </nav>
+                        </div>
+                        <div class="col-md-8 col-md-offset-1 indicadores">
+                            <img src="{% static "img/indicadores.png" %}" class="img-responsive">
+                        </div>
+
+                    
+                    {% for urldata in forms_urls %}
+                    {% include "kiosco_app/iframe_forms.html" with urldata=urldata only %}
+                    {% endfor %}
+                    {% include "kiosco_app/iframe_orfeo.html" with urldata=orfeo_follow width=545 height=460 %}
+                    {% include "kiosco_app/iframe.html" with urldata=geoportal width=1200 height=600 %}
+                    {% include "kiosco_app/iframe.html" with urldata=relay_center width=1200 height=900 %}
+                    {% include "kiosco_app/iframe_forms.html" with urldata=chat width=800 height=400 %}
+                
+  
+             </div>    
+             </div>   
+ <!--             </div>
+            </div>
+             FIN CONTENIDO --> 
+            <!-- Barra de colores -->
+            <div class="contenedor-colores">
+                <div class="row" id="colorbar">
+                    <div class="hidden-xs" id="color_container">
+                        <div id="areaa">
+                            <div id="area1" class="color4"></div>
+                            <div id="area2" class="color2"></div>
+                        </div>
+                        <div id="area3" class="color5"></div>
+                        <div id="area4" class="color2"></div>
+                        <div id="areab">
+                            <div id="area5" class="color3"></div>
+                            <div id="area6" class="color4"></div>
+                            <div id="area7" class="color2"></div>
+                        </div>
+                        <div id="areac">
+                            <div id="area8" class="color4"></div>
+                            <div id="area9" class="color1"></div>
+                        </div>
+                        <div id="area10" class="color2"></div>
+                        <div id="area11" class="color5"></div>
+                        <div id="aread">
+                            <div id="area12" class="color3"></div>
+                            <div id="area13" class="color6"></div>
+                        </div>
+                        <div id="area14" class="color4"></div>
+                        <div id="areae">
+                            <div id="area15" class="color1"></div>
+                            <div id="area16" class="color3"></div>
+                        </div>
+                        <div id="areaf">
+                            <div id="area17" class="color3"></div>
+                            <div id="area18" class="color2"></div>
+                            <div id="area19" class="color5"></div>
+                        </div>
+                        <div id="areag">
+                            <div id="area20" class="color6"></div>
+                            <div id="area21" class="color3"></div>
+                        </div>
+                        <div id="area22" class="color1"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            
+            <!-- fin barra de colores  --> 
+            <!-- FOOTER -->
+            <div class="footer-home container">
+                <div class="logotipo-dane-home col-md-3"><img src="{% static "img/logotipo-dane-home.png" %}" class="img-responsive" alt="Logotipo DANE"></div>
+                <div class="col-md-5 txt-footer-home" >
+                    <p><strong>Departamento Administrativo Nacional de Estadística DANE</strong><br> 
+                        Horario de atención: Lunes a viernes 8:00 a 17:00 • Conmutador (571) 597 8300 • Fax (571) 597 8399<br>
+                        Línea gratuita de atención 01 8000 912002 ó (571) 597 8300 Exts. 2532 - 2605 <br>
+                        Carrera 59 No. 26-70 Interior I - CAN • Código postal 111321 • Apartado Aéreo 80043<br>
+                        Bogotá D.C., Colombia - Suramérica 
+                    </p>
+                </div>
+                <div class="col-md-2 botones-accesibilidad">
+                        <div class="centro-relevo img-responsive">
+                            <a type="button" data-toggle="modal" data-target="#{{relay_center.id}}" style="cursor: pointer;">
+                                <img src="{% static "img/ico_relevo.png" %}"/>
+                            </a>
+                        </div>
+               </div>
+               <div class="col-md-2 botones-accesibilidad">
+                        <div class="chat-widget">
+{#                            <!-- mibew button --><a id="mibew-agent-button" href="http://formularios.dane.gov.co/chatsoporte/index.php/chat?locale=es&amp;style=default&amp;group=3" target="_blank" onclick="Mibew.Objects.ChatPopups['565f46b5386a4ae3'].open();return false;"><img src="http://formularios.dane.gov.co/chatsoporte/index.php/b?i=chatpw&amp;lang=es&amp;group=3" border="0" alt="" /></a><script type="text/javascript" src="http://formularios.dane.gov.co/chatsoporte/js/compiled/chat_popup.js"></script><script type="text/javascript">Mibew.ChatPopup.init({"id":"565f46b5386a4ae3","url":"http:\/\/formularios.dane.gov.co\/chatsoporte\/index.php\/chat?locale=es&style=default&group=3","preferIFrame":true,"modSecurity":false,"height":480,"width":640,"resizable":true,"styleLoader":"http:\/\/formularios.dane.gov.co\/chatsoporte\/index.php\/chat\/style\/popup\/default"});</script><!-- / mibew button -->#}
+                            <a id="mibew-agent-button" data-toggle="modal" data-target="#{{chat.id}}"  target="#{{chat.id}}"style="cursor: pointer;">
+                               <img src="{% static "img/ico_chat.png" %}" border="0" alt=""/>
+                            </a>                          
+                        </div>
+                      
+                     
+                
+                </div>
+            </div>
+            <!-- FIN FOOTER-->
+        
+    </body>
+</html>

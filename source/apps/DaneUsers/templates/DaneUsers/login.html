@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+{#<div class="row">#}
+{#    <div class="col-md-3 col-sm-3 col-xs-10 col-centered">#}
+{#        <h1 class="text-center bienvenida">Bienvenido</h1>#}
+{#    </div>#}
+{# </div>#}
+  <div class="row">
+  <div class="col-md-4 col-sm-4 col-xs-10 col-centered block-information">
+	<form id="login_form" method="post" action="{% url 'DaneUsers:login' %}{%if next %}?next={{next}}{% endif %}">
+        {% csrf_token %}
+      <h2 class="text-center login">Apreciado ciudadano</h2>  
+      {%if next %}   
+        <h5 class="text-justify">Para acceder a este servicio es necesario registrarse.</h5>
+      {% endif %}
+        <h5 class="text-justify">Si ya estas registrado, ingresa tu correo y contraseña, o si eres funcionario del DANE, puedes ingresar registrando tu correo institucional y la contraseña de acceso a tu equipo de cómputo.</h5><br>      
+
+      {% if is_inactive_ldap_user %}
+        <h6>Al parecer su usuario no existe o se encuentra inactivo</h6>
+      {% endif %}
+      {{user_login_form.non_field_errors }}
+      <div class="form-group has-feedback has-feedback-left">
+{#        <input class="form-control" type="email" name="email" id="exampleInputEmail1 inputSuccess1" placeholder="{% trans "e-mail" %}">#}
+{#            {{user_login_form.email.errors}}#}
+            {{user_login_form.email}}
+        <i class="glyphicon glyphicon-user form-control-feedback"></i>
+      </div>
+      <div class="form-group has-feedback has-feedback-left .has-error .has-success">
+{#        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="{% trans  "password"  %}">#}
+            {{user_login_form.password.errors}}
+            {{user_login_form.password}}
+         <i class="glyphicon glyphicon-star form-control-feedback"></i>
+      </div>
+      <input type="hidden" name="next" id="id_next" value="{{ next }}" />
+      
+          <div class="row col-centered">
+	          <div class="botones-login text-center col-md-6 col-sm-6 col-xs-6">
+		        <button type="submit" value="submit" class="btn btn-default acceder">Ingresar</button>
+		      </div>
+
+         	      <a href = {% url 'DaneUsers:registerUser' %}{%if next %}?next={{next}}{% endif %}/>	          
+	         	      <div class="botones-login text-center col-md-6 col-sm-6 col-xs-6">
+				            <button type="button" class="btn btn-default registrarse">Registrarse</button>
+	                  </div>   
+	             </a>
+          </div>
+      </div>
+    </form>
+<div class="col-md-3 col-sm-3 col-xs-10 col-centered">
+<div class="form-dane-contrasena text-center"><a href={% url 'DaneUsers:recoverPassword' %}>¿Olvidaste tu contraseña?</a></div>
+</div>
+</div>
+
+
+</div>
+</div>
+ {% endblock %}

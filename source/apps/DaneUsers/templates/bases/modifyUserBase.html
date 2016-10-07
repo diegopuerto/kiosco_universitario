@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-5 col-xs-8 col-centered">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-sm-8 col-xs-8 col-centered block-text-title">      
+      <h1>{% block subtitle_form %}{% endblock %}</h1>
+     </div>
+
+  </div>
+  <div class="row ">
+    <div class="col-md-8 col-sm-8 col-xs-8 col-centered">
+              <h4 class="text-justify"><br>
+	      <p> Apreciado(a) ciudadano(a) </p>
+		  <p>Registra tu información personal en los siguientes campos para acceder oportunamente a los servicios que ofrece el DANE.    
+			Ten en cuenta que las casillas marcadas con asterisco (*) son de tipo obligatorio. </p>
+	  </h4>	
+        <form id="user_form" method="post" 
+                action="{% block url_post  %}{% endblock %}{%if next %}?next={{next}}{% endif %}"
+                enctype="multipart/form-data">
+       <div class=" form-registro-dane">      
+        {% csrf_token %}
+        {% block basic_forms %}{% endblock %}
+        {% block other_forms %}{% endblock other_forms %}
+       </div>
+        </div>
+        <div class="registro-envio col-md-8 col-sm-8 col-xs-8 col-centered">
+          <label class="registro-terminos-condiciones  col-md-12 col-sm-12 col-xs-12 col-centered">
+            <input required type="checkbox">
+            <a href="#">Acepto los Términos y Condiciones</a> </label>
+          <div class="boton-registro text-center col-md-2 col-sm-6 col-xs-6 col-centered">
+            <button type="submit" class="btn btn-default acceder">Enviar</button>
+          </div>
+      </form>
+            <a href="{% url "kiosco_app:home" %}">
+            <div class="boton-inicio text-center col-md-2 col-sm-4 col-xs-6 col-centered">
+                <button type="button" class="btn btn-default registrarse">Volver</button>
+            </div>
+           </a>
+    </div>
+  </div>
+</div>
+ {% endblock %}

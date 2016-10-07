@@ -1,0 +1,15 @@
+
+<div class = "profile-info col-centered">
+	<p><b>E-mail: </b> {{request.user.email}}<p>
+	<p><b>Nombre: </b> {{request.user.first_name}} {{request.user.last_name}}<p>
+	<p><b>Ciudad: </b> {{request.user.userprofile.city}}<p>
+	<p><b>Documento de Identidad:</b> ( {{request.user.userprofile.id_type}} ) {{request.user.userprofile.id_doc}}<p> 
+	<p><b>Celular: </b> {{request.user.userprofile.cellphone}} <p> 
+    <p><b>Sexo: </b> {% if request.user.userprofile.gender %} male {% else %} female {% endif %}<p> 
+	<p><b>Rango de edad: </b>{{request.user.userprofile.age_range.name}} <p>
+	<p><b>País de nacimiento: </b>{{request.user.userprofile.place_of_birth.name}} <p>
+	<p><b>Educación: </b>{{request.user.userprofile.education.name}} <p>
+	<p><b>Actividad: </b>{{request.user.userprofile.activity.name}} <p>
+	<p><b>Discapacidad: </b>{{request.user.userprofile.disability.name}} <p>
+	<p><b>Perfil creado: </b>{{request.user.userprofile.created_on}} <p>
+</div>

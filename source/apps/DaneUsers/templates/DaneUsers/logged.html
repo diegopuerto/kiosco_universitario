@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+<div class="row">
+  <div class="col-md-5 col-sm-5 col-xs-10 col-centered">
+{#    <div class="col-md-3 col-sm-3 col-xs-10 col-centered">#}
+{#        <h1 class="text-center bienvenida">Bienvenido</h1>#}
+{#    </div>#}
+
+    	<h1 class="bienvenida text-center">Bienvenido, {{ user.first_name }}</h1>
+	</div>	
+   </div>	
+
+	<div class="row">
+		<div  class="col-md-6 col-sm-8 col-xs-11 col-centered block-information">
+	
+		{% include 'DaneUsers/UserData.html' %}	   
+			<a href = {% url "DaneUsers:modifyUserData" %}>
+			  <div class="botones-logged text-center col-sm-6 col-xs-6 col-md-5 col-md-offset-1 ">
+			  <button type="submit" value="submit" class="btn btn-default acceder">Actualizar datos</button>
+		      </div>
+			</a>
+	   
+			<a href = {% url "DaneUsers:deactivate" %}>
+			<div class="botones-logged text-center col-md-5 col-sm-6 col-xs-6">
+              <button type="submit" value="submit" class="btn btn-default registrarse">Darse de baja</button>
+              </div>
+			</a>
+			
+
+
+   </div>	
+  </div>
+</div>
+ {% endblock %}

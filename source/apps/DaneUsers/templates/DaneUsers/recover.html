@@ -1,0 +1,11 @@
+El usuario con el correo {{email}} ya no existe en la base de datos del DANE
+Puede recuperar el acceso a su cuenta usando su correo alternativo y cambiando su contraseña.
+Para ello se le solicita ingresar su correo alternativo en el siguiente campo y hacer click en el botón "recuperar cuenta"
+Una vez hecho esto se le enviará un correo para que cree la nueva contraseña que utilizará en adelante para ingresar al sistema.
+<form action="" method="post">
+    <div style="display:none">
+        <input type="hidden" value="{{ csrf_token }}" name="csrfmiddlewaretoken">
+    </div>
+     {{ form.email.errors }}
+    <p><label for="id_email">E-mail address:</label> {{ form.email }} <input type="submit" value="Reset password" /></p>
+</form>

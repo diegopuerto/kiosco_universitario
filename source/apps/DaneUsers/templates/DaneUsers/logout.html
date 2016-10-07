@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}  
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-8 col-xs-10 col-centered block-text-title">
+      <h1>Has cerrado sesión</h1>
+      <h2>Vuelve pronto</h2>
+    </div>
+    <div class="img-portal-int center-block">
+      <a href="{% url "kiosco_app:home" %}"><img src={% static "img/img-portal-int.png"%} alt="Portal de Consulta Rápida"></a>
+    </div>
+    <!-- <div class="col-md-6 col-sm-8 col-xs-10 col-centered">
+      <h1 class="text-center bienvenida">Te has deslogueado</h1>
+      <h2 class="text-center subtitle-section">Vuelve pronto</h2>
+      <img class="img-portal-int center-block" src="img/img-portal-int.png" alt="Portal de Consulta Rápida">
+    </div> -->
+  </div>
+  <div class="row">
+
+        <div class="botones-login text-center">
+      <a href="{% url "DaneUsers:login" %}"><button type="submit" class="btn btn-default acceder">Ingresar</button></a>
+      </div>
+        <p>
+           
+        </p>
+    </div>
+</div>
+ 
+ {% endblock %}

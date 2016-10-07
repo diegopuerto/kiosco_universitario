@@ -1,0 +1,15 @@
+{% extends "services_requests/requests_base.html" %}
+{% block subtitle_form %} Solicitud Evento de Cultura Estadística {% endblock %}
+{% block url_post  %}{% url 'services_requests:statisticalCulture' %}{% endblock %}
+{% block service_name %}evento de Cultura Estadística{% endblock %}
+{% block form_name %}Servicios de Cultura Estadística{% endblock form_name %}
+{% block request_form %}
+       <div class="col-md-12 col-sm-12 col-xs-12">
+        {{ forms.services_request_form.service.errors }}
+        {{ forms.services_request_form.service }}
+      </div>
+       <div class="col-md-12 col-sm-12 col-xs-12">
+        {{ forms.services_request_form.detail.errors }}
+        {{ forms.services_request_form.detail }}
+      </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% load staticfiles %}
+
+ <nav class="topview2 hidden container navbar navbar-default navbar-fixed-top">
+    <div class="row container-fluid">
+      <div class="navbar-header col-xs-2 col-md-1"> <a class="navbar-brand" href="http://www.dane.gov.co/index.php"> <img src={% static "img/dane_icon.png" %}> </a> </div>
+      <div class="row col-xs-11 col-sm-9 col-md-11" id="bar">
+        <div class="row hidden hidden col-md-4 pull-right" id="fecha">
+          <div class="row col-sm-10 col-md-10"> <small class="today_display"></small> </div>
+          <div class="row col-sm-3 col-md-3 pull-right" id="idioma"> <small><a class="btn-link" href="http://www.dane.gov.co/index.php/eng/">English</a></small> </div>
+        </div>
+        <div class="row hidden-xs col-md-3 pull-left" id="redes_2">
+          <div class=""> <a href="http://www.youtube.com/DaneColombia" target="_blank">
+            <div id="icon-net" class="yt"></div>
+            </a> <a href="https://www.facebook.com/DANEColombia" target="_blank">
+            <div id="icon-net" class="fb"></div>
+            </a> <a href="https://twitter.com/DANE_Colombia" target="_blank">
+            <div id="icon-net" class="tw"></div>
+            </a> <a href="https://mail.dane.gov.co/" target="_blank">
+            <div id="icon-net" class="ml"></div>
+            </a> </div>
+        </div>
+        <div class="row hidden col-sm-8 col-md-4" id="search">
+          <div class="input-group" id="busqueda">
+            <input type="text" class="form-control">
+            <span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true"></span> </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+<!-- Fin menu fijo -->
+  
+<div class="clearfix"></div>
+</div>

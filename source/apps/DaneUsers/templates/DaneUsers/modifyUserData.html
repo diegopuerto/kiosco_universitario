@@ -1,0 +1,7 @@
+{% extends "bases/modifyUserBase.html" %}
+{% load staticfiles %}
+{% block subtitle_form %} Registro {% endblock %}
+{% block url_post  %}{% url 'DaneUsers:modifyUserData' %}{% endblock %}
+{% block basic_forms %}
+    {% include 'bases/basicForms.html' %}
+{% endblock %}

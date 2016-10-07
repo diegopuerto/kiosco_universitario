@@ -1,0 +1,14 @@
+{% load staticfiles %}
+{% if request.user.is_authenticated %}
+<script type="text/javascript" src="{% static  "js/session-expire.js" %}"></script>
+{% endif %}
+
+<div id="expire-session-modal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">x</span>
+    <p><div>You will be auto logged out in <span id="SecondsUntilExpire"></span> seconds.</div></p>
+  </div>
+
+</div>

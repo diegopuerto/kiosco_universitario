@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>DANE</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="/static/js/jquery-3.1.1.min.js"></script>
+        <script src="/static/js/dropzone.js"></script>
+        <link href="/static/css/dropzone.css" rel="stylesheet" type="text/css"></script>
+    </head>
+    <body>
+            <!--
+            <form class="form form-horizontal" action="/file_server/" method="post">
+        -->
+            <div> 
+             <form class="dropzone" action="/file_server/" method="post" id="input_dropzone" enctype="multipart/form-data">
+                {% csrf_token %}
+            </form>
+                <button id="submit_file" class="btn btn-success">Enviar archivos</button>
+                <button id="clear_dropzone" class="btn btn-danger"><i class="fa fa-paint-brush"></i> Limpiar </button>
+            <div>
+    </body>
+
+<script>
+    drop_zone_func();
+    Dropzone.options.inputDropzone = {
+        maxFilesize: 1,
+        maxFiles: 2,
+        autoProcessQueue: false,
+    };
+    function drop_zone_func(){
+        var file_dropzone = new Dropzone(document.getElementById("input_dropzone"),{
+            maxFilesize: 1,
+            maxFiles: 2,
+            autoProcessQueue: false,
+            })
+        $('#submit_file').on('click', function() {
+            file_dropzone.processQueue();
+        });
+        $('#clear_dropzone').on('click', function(file) {
+            file_dropzone.removeAllFiles();
+        });
+    };
+
+$(document).ready(function(){
+    console.log("Pagina lista");
+/*********************  DROPZONE FILE UPLOAD*********************************/
+//    var myDropzone = new Dropzone("form#input_dropzone");
+//    var file_dropzone = new Dropzone(document.getElementById("input_dropzone"), {
+
+
+//function drop_zone_func(){
+//    var file_dropzone = new Dropzone(document.getElementById("input_dropzone"), {
+////            acceptedFiles: ".shx,.shp,.sbx,.sbn,.prj,.dbf,.cpg",
+//        uploadMultiple: true,
+//        parallelUploads: 100,
+//        maxFiles: 100,
+//        autoProcessQueue: false
+//    });
+//    file_dropzone.on('success', function (file,data) {
+//        if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0){
+//            setTimeout(function(){
+//                $.extend( $.gritter.options, {
+//                    position: 'bottom-right' 
+//                });
+//                $.gritter.add({
+//                    title: '<i class="fa fa-check-square fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; Archivo(s) almecenado(s)!!', 
+//                    class_name: 'gritter-verde',
+//                    time: 2000
+//                });
+//            },400);
+//        }
+//        file_dropzone.removeFile(file); 
+//        var save_button ='<tr><td><button id="savelayers" class="btn btn-default">Guardar en DB</button></td></tr>'
+//        $('#form_layer_trazado').html(data);
+//        $('#save_layers').html(save_button);
+//        init_savelayers();
+//        console.log("Success de get layers");
+//    });
+//};
+/************************* FIN DROPZONE *************************************************/
+});
+</script>
+
+<html>

@@ -1,0 +1,107 @@
+/* dropzone file uplaod */
+/* line 1223, ../../sass/partials/_ui-elements.scss */
+.dropzone {
+  padding: 20px;
+  height: 360px;
+  background-image: url('../img/diagonal-stripe.png?1369651034');
+  background-repeat: repeat;
+}
+/* line 1231, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-message {
+  font-size: 15px;
+  text-align: center;
+  color: #A4A4A4;
+}
+/* line 1236, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-message:before {
+  font-family: FontAwesome;
+  content: '\f0ee';
+  display: block;
+  font-size: 4em;
+  line-height: 1;
+}
+/* line 1245, ../../sass/partials/_ui-elements.scss */
+.dropzone.dz-started .dz-message {
+  display: none;
+}
+/* line 1249, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-message {
+  display: block;
+}
+/* line 1253, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-default.dz-message {
+  background: none;
+  position: relative;
+  width: auto;
+  height: auto;
+  margin-left: 0;
+  margin-top: -2.8em;
+  top: 50%;
+  left: initial;
+}
+/* line 1263, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-default.dz-message span {
+  display: block;
+}
+/* line 1268, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-fallback {
+  text-align: center;
+}
+/* line 1271, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-fallback input[type="file"] {
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+/* line 1278, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-preview .dz-remove {
+  background: #DB3833;
+  color: #fff;
+  font-size: 0.9em;
+}
+/* line 1283, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-preview .dz-remove:before {
+  font-family: FontAwesome;
+  content: '\f00d';
+  margin-right: 3px;
+}
+/* line 1289, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-preview .dz-remove:hover {
+  background: #d02a25;
+  color: #fff;
+  cursor: pointer;
+}
+/* line 1296, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-preview .dz-error-mark,
+.dropzone .dz-preview .dz-success-mark {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #fff;
+  width: 25px;
+  height: 25px;
+}
+/* line 1304, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-preview .dz-error-mark:before,
+.dropzone .dz-preview .dz-success-mark:before {
+  font-family: FontAwesome;
+  font-size: 15px;
+  position: absolute;
+  left: 5px;
+  top: 2px;
+}
+/* line 1314, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-preview .dz-error-mark:before {
+  content: '\f071';
+  color: #DB3833;
+}
+/* line 1321, ../../sass/partials/_ui-elements.scss */
+.dropzone .dz-preview .dz-success-mark:before {
+  content: '\f00c';
+  color: #4BA84B;
+}
+
+/* line 1329, ../../sass/partials/_ui-elements.scss */
+.ie9 .dropzone .dz-message:before {
+  font-size: 0.2em;
+}
+

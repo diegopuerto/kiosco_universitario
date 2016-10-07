@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-sm-8 col-xs-10 col-centered">
+            <h1 class="text-center bienvenida">{% block subtitle_form %}{% endblock %}</h1>
+        </div>
+    </div>
+    <div class="row ">
+        {% if userProfile %}  
+        <div class="col-md-6 col-sm-8 col-xs-11 col-centered">
+            {% else %}    
+            <div class="col-md-10 col-sm-10 col-xs-10 col-centered">
+                {% endif %}
+                <form id="user_form" method="post" 
+                    action="{% block url_post  %}{% endblock %}"
+                    enctype="multipart/form-data">
+                    <div class=" form-registro-dane">
+                        {% csrf_token %}
+                        {% if userProfile %}
+{#                            {% include 'DaneUsers/UserData.html' %}     #}
+                            Señor(a) {{user.first_name}} {{user.last_name}}, 
+                            si tienes algun comentario adicional con respecto al servicio de {% block service_name %}{% endblock %} que vas a solicitar, 
+                            por favor regístralo en la casilla de detalle.
+                        {% else %}
+                            {% include 'bases/basicForms.html' %}
+                        {% endif %}
+                        <div class="row form-group-salaesp">
+                            <h4>{% block form_name %}{% endblock form_name %}</h4>
+                            {% block request_form %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                    <div class="registro-envio col-md-12 col-sm-12 col-xs-12 col-centered">
+                        <label class="registro-terminos-condiciones  col-md-12 col-sm-12 col-xs-12 col-centered">
+                        <input required type="checkbox">
+                        <a href="#">Acepto los Términos y Condiciones</a> </label>
+                        <div class="boton-registro text-center col-md-2 col-sm-4 col-xs-6 col-centered">
+                            <button type="submit" class="btn btn-default acceder">Enviar</button>
+                        </div>
+ 				        <a href="{% url "kiosco_app:home" %}">                       
+	                        <div class="boton-inicio text-center col-md-2 col-sm-4 col-xs-6 col-centered">
+						            <button type="button" class="btn btn-default registrarse">                             
+						               Volver
+						            </button>                         
+	                        </div>
+				        </a>                   
+                    </div>  
+            </div>                            
+            </form>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}
