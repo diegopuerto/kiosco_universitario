@@ -28,3 +28,16 @@
 **media:** Contains the media files (like audio and image files) which are uploaded by the front end (by admins or users)
 
 **static:** Static files (like css, js, even audio and image files) which are used and setted from the back end
+
+### Installation
+
+$ virtualenv -p python2.7 venv      # This installs python2.7 as the main interpreter, required for successful pip install
+$ pip install -r requirements.txt
+
+### Testing
+
+$ source venv/bin/activate
+$ cd source
+$ python manage.py runserver 0.0.0.0:8000  # No errors sholud be presented
+
+Open a local browser and go to 127.0.0.1:8000, you should see Kiosco's main page
