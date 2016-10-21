@@ -1,0 +1,42 @@
+<table>
+    <thead>
+        <tr>
+            <th>
+                <b>Name</b>
+            </th>
+            <th>
+                <b>Size</b>
+            </th>
+            <th>
+                <b>URL</b>
+            </th>
+            <th>
+                <b>Is public?</b>
+            </th>
+            <th>
+                <b>Data pending?</b>
+            </th>
+        </tr>
+    <thead>
+    <tbody>
+    {% for single_file in all_files %}
+        <tr>
+            <td>
+                <a href="/file_server/{{ single_file.id }}">{{ single_file.name }}</a></br>
+            </td>
+            <td>
+                {{ single_file.filesize }}
+            </td>
+            <td>
+                {{ single_file.url }}
+            </td>
+            <td>
+                {{ single_file.is_public }}
+            </td>
+            <td>
+                {{ single_file.data_pending }}
+            </td>
+        </tr>
+    {% endfor %}
+    <tbody>
+</table>

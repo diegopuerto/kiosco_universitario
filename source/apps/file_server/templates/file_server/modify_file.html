@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>DANE</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="/static/js/jquery-3.1.1.min.js"></script>
+        <script src="/static/js/dropzone.js"></script>
+        <link href="/static/css/dropzone.css" rel="stylesheet" type="text/css"></script>
+    </head>
+    <body>
+        <div> 
+            <form class="form form-horizontal" action="/file_server/{{ file_id }}" method="post">
+                 <table>
+                {{ input_file_form.as_table}}
+                 </table>
+                {% csrf_token %}
+                <input type="hidden" id="id_modify" name="id_modify"/>
+                <button id="submit" class="btn btn-success">Enviar cambios</button>
+            </form>
+        <div>
+    </body>
+
+
+<script>
+$(document).ready(function(){
+    console.log("Pagina lista");
+});
+</script>
+
+<html>
