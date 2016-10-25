@@ -36,10 +36,17 @@
             maxFilesize: 1,
             maxFiles: 2,
             autoProcessQueue: false,
-            })
+        });
+
+        file_dropzone.on("queuecomplete", function(response){
+            alert("sus archivos fueron cargados "+response);
+            window.location = "/file_server/pending/";
+        });
+
         $('#submit_file').on('click', function() {
             file_dropzone.processQueue();
         });
+
         $('#clear_dropzone').on('click', function(file) {
             file_dropzone.removeAllFiles();
         });

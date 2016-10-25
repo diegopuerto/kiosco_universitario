@@ -1,0 +1,42 @@
+<table>
+    <thead>
+        <tr>
+            <th>
+                <b>Name</b>
+            </th>
+            <th>
+                <b>Size</b>
+            </th>
+            <th>
+                <b>URL</b>
+            </th>
+            <th>
+                <b>Is public?</b>
+            </th>
+            <th>
+                <b>Data pending?</b>
+            </th>
+        </tr>
+    <thead>
+    <tbody>
+    {% for input_file in pending_input_files %}
+        <tr>
+            <td>
+                <a href="/file_server/{{ input_file.id }}">{{ input_file.name }}</a></br>
+            </td>
+            <td>
+                {{ input_file.filesize }}
+            </td>
+            <td>
+                {{ input_file.url }}
+            </td>
+            <td>
+                {{ input_file.is_public }}
+            </td>
+            <td>
+                {{ input_file.data_pending }}
+            </td>
+        </tr>
+    {% endfor %}
+    <tbody>
+</table>
