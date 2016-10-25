@@ -38,6 +38,9 @@ $ pip install -r requirements.txt
 
 $ source venv/bin/activate
 $ cd source
+$ python manage.py migrate
+$ python manage.py fix_permissions
+$ python manage.py initialdata
 $ python manage.py runserver 0.0.0.0:8000  # No errors sholud be presented
 
 Open a local browser and go to 127.0.0.1:8000, you should see Kiosco's main page
