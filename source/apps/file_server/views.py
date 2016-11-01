@@ -81,7 +81,7 @@ def checkout(request):
             print("req_value %s"%request.POST[item])
             query_list.append(int(item.split("file_")[1]))
     file_list = InputFile.objects.filter(pk__in=query_list)
-    print (file_list)
+    print ("file_list: %s"%file_list)
     if create_zip(file_list):
         return HttpResponse("bien: %s"%file_list)
     else:
