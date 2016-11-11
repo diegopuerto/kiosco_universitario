@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 
-from models import InputFile, InputFileForm
+from models import InputFile, InputFileForm, List, File_List
 from extras import save_uploaded_file, create_zip
 
 def insert_file(request, file_id=1):
@@ -80,9 +80,18 @@ def checkout(request):
         if 'file_' in item:
             print("req_value %s"%request.POST[item])
             query_list.append(int(item.split("file_")[1]))
+    print ("query_list: %s"%query_list)
     file_list = InputFile.objects.filter(pk__in=query_list)
     print ("file_list: %s"%file_list)
-    if create_zip(file_list):
-        return HttpResponse("bien: %s"%file_list)
-    else:
+#    for inputfile in query_list:
+#        a = File_List.objects.filter(inputfile__in=query_list[inputfile])
+    is_created = create_zip(file_list)
+    
+#    is_created=True
+    if not is_created:
         return HttpResponse("mal: %s"%file_list)
+    else:
+        return HttpResponse("bien: %s"%is_created)
+
+
+

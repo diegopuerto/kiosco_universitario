@@ -31,9 +31,8 @@ def create_zip(file_list):
         for input_file in file_list:
             with ZipFile(name+'.zip', mode='w') as zf:
                 zf.write(input_file.url)
-        return True
+        return name+'.zip'
     except Exception as e:
         print ("Error: %s"%e)
         return False
-
 
