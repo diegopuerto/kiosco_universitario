@@ -20,13 +20,13 @@ def save_uploaded_file(f,nombre):
         
     return filename
 
-def create_zip(file_list):
-    stamp = ''
-    stamp = datetime.now().strftime("%Y%m%d%H%M%S")
-    print ("stamp: %s"%stamp)
-    hash1 = md5(stamp.encode('utf-8'))
-    name = FILE_PATH+hash1.hexdigest()
-    print ("name: %s"%name)
+def create_zip(name,file_list):
+#    stamp = ''
+#    stamp = datetime.now().strftime("%Y%m%d%H%M%S")
+#    print ("stamp: %s"%stamp)
+#    hash1 = md5(stamp.encode('utf-8'))
+#    name = FILE_PATH+hash1.hexdigest()
+#    print ("name: %s"%name)
     try:
         for input_file in file_list:
             with ZipFile(name+'.zip', mode='w') as zf:

@@ -13,7 +13,7 @@ class InputFile(models.Model):
     data_pending = models.BooleanField(verbose_name="Is there any pending data in the file?", default=True)
 
     def __str__(self):
-        return "%s - %s" %(self.name, self.url)
+        return "%s" %(self.name)
 
 class List(models.Model):
     name = models.CharField(max_length=64, verbose_name="List of files")

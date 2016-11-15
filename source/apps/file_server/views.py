@@ -3,6 +3,37 @@ from django.http import HttpResponse
 
 from models import InputFile, InputFileForm, List, File_List
 from extras import save_uploaded_file, create_zip
+from hashlib import md5
+from datetime import datetime
+
+FILE_PATH = '/home/juan/work/dane/datos/Kiosco/'    ## Directorio lenny
+
+def hasher():
+    stamp = ''
+    stamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    print ("stamp: %s"%stamp)
+    hash1 = md5(stamp.encode('utf-8'))
+    name = FILE_PATH+hash1.hexdigest()
+    return name
+
+def list_exists(query_list):
+    output = False
+    base = File_List.objects.filter(inputfile=query_list[0])
+    for filelist in base:
+        a = []
+        b = File_List.objects.filter(listname=filelist.listname)
+#        print ("b: %s"%b)
+        for item in b:
+            a.append(int(item.inputfile.id))
+        a.sort()
+        if (a==query_list):
+            print ("List already exists: %s"%filelist.listname.id)
+            output = filelist.listname.id
+            break
+        else:
+            print ("List does not exist")
+        print("a: %s"%a)
+    return output
 
 def insert_file(request, file_id=1):
     if request.method =='POST':
@@ -80,18 +111,34 @@ def checkout(request):
         if 'file_' in item:
             print("req_value %s"%request.POST[item])
             query_list.append(int(item.split("file_")[1]))
+    query_list.sort()
     print ("query_list: %s"%query_list)
-    file_list = InputFile.objects.filter(pk__in=query_list)
-    print ("file_list: %s"%file_list)
-#    for inputfile in query_list:
-#        a = File_List.objects.filter(inputfile__in=query_list[inputfile])
-    is_created = create_zip(file_list)
-    
-#    is_created=True
-    if not is_created:
-        return HttpResponse("mal: %s"%file_list)
+
+    filelist_name = hasher()
+
+    query_list_exists = list_exists(query_list)
+    if not query_list_exists:
+        test_list = List(name=filelist_name, download_path=filelist_name)
     else:
-        return HttpResponse("bien: %s"%is_created)
+        existing_list = List.objects.get(id=query_list_exists)
+        test_list = List(name=filelist_name, download_path=existing_list.name)
+    test_list.save()
+
+    for item in query_list:
+        inputfile = InputFile.objects.get(id=item)
+        test_file = File_List(inputfile=inputfile, listname=test_list)
+        test_file.save()
+
+    if not query_list_exists:
+        file_list = InputFile.objects.filter(pk__in=query_list)
+        print ("file_list: %s"%file_list)
+        is_created = create_zip(filelist_name,file_list)
+        if not is_created:
+            return HttpResponse("mal: %s"%file_list)
+        else:
+            return HttpResponse("bien: %s"%is_created)
+    else:
+        return HttpResponse("ya existe: %s"%test_list.download_path)
 
 
 
