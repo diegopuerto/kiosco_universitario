@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 
+from django.contrib.auth.decorators import login_required
+
 from models import InputFile, InputFileForm, List, File_List
 from extras import save_uploaded_file, create_zip
 from hashlib import md5
@@ -102,6 +104,7 @@ def all_files_list(request):
     all_files = InputFile.objects.all()
     return render(request,'file_server/all_files.html',{'message':message, 'all_files':all_files})
 
+@login_required
 def checkout(request):
     print("request.post: %s"%request.POST)
     print("request.files: %s"%request.FILES)

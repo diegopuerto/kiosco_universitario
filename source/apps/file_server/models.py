@@ -18,7 +18,6 @@ class InputFile(models.Model):
 class List(models.Model):
     name = models.CharField(max_length=64, verbose_name="List of files")
     download_path = models.CharField(max_length=300, verbose_name="Path to the compressed zip file containing the files")
-    creation_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return "%s" %self.name
@@ -29,6 +28,9 @@ class List(models.Model):
 class File_List(models.Model):
     inputfile = models.ForeignKey('InputFile', verbose_name="File that belongs to the list")
     listname = models.ForeignKey('List', verbose_name="Name of the list containing the file")
+    creation_date = models.DateTimeField(auto_now=True)
+    remaining_downloads = models.IntegerField()
+
 
     def __str__(self):
         return "%s: %s" %(self.inputfile, self.listname)

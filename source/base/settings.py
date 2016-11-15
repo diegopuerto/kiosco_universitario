@@ -66,7 +66,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'base.urls'
 WSGI_APPLICATION = 'base.wsgi.application'
-LOGIN_URL = 'users/login'
+LOGIN_URL = '/users/login'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
