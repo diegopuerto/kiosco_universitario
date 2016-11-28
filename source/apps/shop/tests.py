@@ -13,6 +13,17 @@ class CategoryTest(TestCase):
                 self.assertTrue(isinstance(c, Category))
                 self.assertEqual(c.__str__(), c.name)
 
+class CategoryTestReverse(TestCase):
+
+        def create_category(self, name="exportaciones", slug="exportaciones-colombia"):
+                return Category.objects.create(name=name, slug=slug)
+
+        def test_validate_reverse_category(self):
+                c = self.create_category()
+                self.assertTrue(isinstance(c, Category))
+                self.assertEqual(c.get_absolute_url(), '/shop/exportaciones-colombia/')
+
+
 class ProductTest(TestCase):
 
 
