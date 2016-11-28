@@ -1,0 +1,125 @@
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Exception while resolving variable 'width' in template 'kiosco_app/home.html'.
+Traceback (most recent call last):
+  File "/Users/DIEGO/Documents/Development/djangoProjects/ku-master/venv/lib/python2.7/site-packages/django/template/base.py", line 905, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [width] in u"[{'False': False, 'None': None, 'True': True}, {u'urldata': {'url': 'http://orfeoott.dane.gov.co/orfeo_3.6.0/radicacionWeb/radicacionPqrs/ingresoPqr.php?rad=1', 'id': 'info-request', 'title': 'Formulario Solicitud de Informaci\\xc3\\xb3n'}}]"
+Exception while resolving variable 'width' in template 'kiosco_app/home.html'.
+Traceback (most recent call last):
+  File "/Users/DIEGO/Documents/Development/djangoProjects/ku-master/venv/lib/python2.7/site-packages/django/template/base.py", line 905, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [width] in u"[{'False': False, 'None': None, 'True': True}, {u'urldata': {'url': 'http://orfeoott.dane.gov.co/orfeo_3.6.0/radicacionWeb/radicacionPqrs/ingresoPqr.php?rad=1', 'id': 'info-request', 'title': 'Formulario Solicitud de Informaci\\xc3\\xb3n'}}]"
+Exception while resolving variable 'height' in template 'kiosco_app/home.html'.
+Traceback (most recent call last):
+  File "/Users/DIEGO/Documents/Development/djangoProjects/ku-master/venv/lib/python2.7/site-packages/django/template/base.py", line 905, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [height] in u"[{'False': False, 'None': None, 'True': True}, {u'urldata': {'url': 'http://orfeoott.dane.gov.co/orfeo_3.6.0/radicacionWeb/radicacionPqrs/ingresoPqr.php?rad=1', 'id': 'info-request', 'title': 'Formulario Solicitud de Informaci\\xc3\\xb3n'}}]"
+Exception while resolving variable 'height' in template 'kiosco_app/home.html'.
+Traceback (most recent call last):
+  File "/Users/DIEGO/Documents/Development/djangoProjects/ku-master/venv/lib/python2.7/site-packages/django/template/base.py", line 905, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [height] in u"[{'False': False, 'None': None, 'True': True}, {u'urldata': {'url': 'http://orfeoott.dane.gov.co/orfeo_3.6.0/radicacionWeb/radicacionPqrs/ingresoPqr.php?rad=1', 'id': 'info-request', 'title': 'Formulario Solicitud de Informaci\\xc3\\xb3n'}}]"
+Exception while resolving variable 'width' in template 'kiosco_app/home.html'.
+Traceback (most recent call last):
+  File "/Users/DIEGO/Documents/Development/djangoProjects/ku-master/venv/lib/python2.7/site-packages/django/template/base.py", line 905, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [width] in u"[{'False': False, 'None': None, 'True': True}, {u'urldata': {'url': 'http://orfeoott.dane.gov.co/orfeo_3.6.0/radicacionWeb/radicacionPqrs/ingresoPqr.php?rad=2', 'id': 'complaints', 'title': 'Formulario Quejas y Reclamos'}}]"
+Exception while resolving variable 'width' in template 'kiosco_app/home.html'.
+Traceback (most recent call last):
+  File "/Users/DIEGO/Documents/Development/djangoProjects/ku-master/venv/lib/python2.7/site-packages/django/template/base.py", line 905, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [width] in u"[{'False': False, 'None': None, 'True': True}, {u'urldata': {'url': 'http://orfeoott.dane.gov.co/orfeo_3.6.0/radicacionWeb/radicacionPqrs/ingresoPqr.php?rad=2', 'id': 'complaints', 'title': 'Formulario Quejas y Reclamos'}}]"
+Exception while resolving variable 'height' in template 'kiosco_app/home.html'.
+Traceback (most recent call last):
+  File "/Users/DIEGO/Documents/Development/djangoProjects/ku-master/venv/lib/python2.7/site-packages/django/template/base.py", line 905, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [height] in u"[{'False': False, 'None': None, 'True': True}, {u'urldata': {'url': 'http://orfeoott.dane.gov.co/orfeo_3.6.0/radicacionWeb/radicacionPqrs/ingresoPqr.php?rad=2', 'id': 'complaints', 'title': 'Formulario Quejas y Reclamos'}}]"
+Exception while resolving variable 'height' in template 'kiosco_app/home.html'.
+Traceback (most recent call last):
+  File "/Users/DIEGO/Documents/Development/djangoProjects/ku-master/venv/lib/python2.7/site-packages/django/template/base.py", line 905, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [height] in u"[{'False': False, 'None': None, 'True': True}, {u'urldata': {'url': 'http://orfeoott.dane.gov.co/orfeo_3.6.0/radicacionWeb/radicacionPqrs/ingresoPqr.php?rad=2', 'id': 'complaints', 'title': 'Formulario Quejas y Reclamos'}}]"
+Exception while resolving variable 'width' in template 'kiosco_app/home.html'.
+Traceback (most recent call last):
+  File "/Users/DIEGO/Documents/Development/djangoProjects/ku-master/venv/lib/python2.7/site-packages/django/template/base.py", line 905, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [width] in u"[{'False': False, 'None': None, 'True': True}, {u'urldata': {'url': 'http://orfeoott.dane.gov.co/orfeo_3.6.0/radicacionWeb/radicacionPqrs/ingresoPqr.php?rad=3', 'id': 'petitions', 'title': 'Formulario Derecho de Petici\\xc3\\xb3n'}}]"
+Exception while resolving variable 'width' in template 'kiosco_app/home.html'.
+Traceback (most recent call last):
+  File "/Users/DIEGO/Documents/Development/djangoProjects/ku-master/venv/lib/python2.7/site-packages/django/template/base.py", line 905, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [width] in u"[{'False': False, 'None': None, 'True': True}, {u'urldata': {'url': 'http://orfeoott.dane.gov.co/orfeo_3.6.0/radicacionWeb/radicacionPqrs/ingresoPqr.php?rad=3', 'id': 'petitions', 'title': 'Formulario Derecho de Petici\\xc3\\xb3n'}}]"
+Exception while resolving variable 'height' in template 'kiosco_app/home.html'.
+Traceback (most recent call last):
+  File "/Users/DIEGO/Documents/Development/djangoProjects/ku-master/venv/lib/python2.7/site-packages/django/template/base.py", line 905, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [height] in u"[{'False': False, 'None': None, 'True': True}, {u'urldata': {'url': 'http://orfeoott.dane.gov.co/orfeo_3.6.0/radicacionWeb/radicacionPqrs/ingresoPqr.php?rad=3', 'id': 'petitions', 'title': 'Formulario Derecho de Petici\\xc3\\xb3n'}}]"
+Exception while resolving variable 'height' in template 'kiosco_app/home.html'.
+Traceback (most recent call last):
+  File "/Users/DIEGO/Documents/Development/djangoProjects/ku-master/venv/lib/python2.7/site-packages/django/template/base.py", line 905, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [height] in u"[{'False': False, 'None': None, 'True': True}, {u'urldata': {'url': 'http://orfeoott.dane.gov.co/orfeo_3.6.0/radicacionWeb/radicacionPqrs/ingresoPqr.php?rad=3', 'id': 'petitions', 'title': 'Formulario Derecho de Petici\\xc3\\xb3n'}}]"
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()

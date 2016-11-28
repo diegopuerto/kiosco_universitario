@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'apps.kiosco_app',                  
     'apps.services_requests',                  
     'apps.storage_files_server',                  
-#    'apps.shop',
+    'apps.shop',
 #    'apps.cart',
     'apps.file_server',
     'django.contrib.admin',
@@ -166,3 +166,58 @@ ACCOUNT_ACTIVATION_DAYS = 7
 
 ####  CART CONFIGURATION ########
 CART_SESSION_ID = 'cart'
+
+LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': True,
+        'filters': {
+                'require_debug_false': {
+                        '()': 'django.utils.log.RequireDebugFalse',
+                },
+                'require_debug_true': {
+                        '()': 'django.utils.log.RequireDebugTrue',
+                }
+        },
+        'formatters': {
+                'simple': {
+                        'format': '[%(asctime)s] %(levelname)s %(message)s',
+                        'datefmt': '%Y-%m-%d %H:%M:%S',
+                },
+                'verbose': {
+                        'format': '[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s',
+                        'datefmt': '%Y-%m-%d %H:%M:%S'
+                },
+        }, 
+        'handlers': {
+                'console': {
+                        'level': 'DEBUG',
+                        'filters': ['require_debug_true'],
+                        'class': 'logging.StreamHandler',
+                },
+                'development_logfile': {
+                        'level': 'DEBUG',
+                        'filters': ['require_debug_true'],
+                        'class': 'logging.FileHandler',
+                        'filename': 'django_dev.log',
+                        'formatter': 'verbose',
+                },
+        },
+        'loggers': {
+                'apps.file_server': {
+                        'handlers': ['console', 'development_logfile'],
+                        'level': 'DEBUG',
+                },
+                'db': {
+                        'handlers': ['console', 'development_logfile'],
+                        'level': 'DEBUG',
+                },
+                'django': {
+                        'handlers': ['console'],
+                        'level': 'CRITICAL',
+                },
+                'py.warnings': {
+                        'handlers': ['console'],
+                },
+        },
+
+}

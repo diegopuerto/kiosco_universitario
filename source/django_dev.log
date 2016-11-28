@@ -1,0 +1,59 @@
+[2016-11-01 01:25:45] DEBUG [apps.file_server.views.insert_file:14] request.post: <QueryDict: {u'csrfmiddlewaretoken': [u'1gWYL0sHAEThYD6pgd028sFgYwY7vzDv']}>
+[2016-11-01 01:28:15] DEBUG [apps.file_server.views.insert_file:14] request.post: <QueryDict: {u'csrfmiddlewaretoken': [u'1gWYL0sHAEThYD6pgd028sFgYwY7vzDv']}>
+[2016-11-01 01:28:15] DEBUG [apps.file_server.views.insert_file:15] request.files: <MultiValueDict: {u'file': [<InMemoryUploadedFile: 14399092511_a6240352bc_k.jpg (image/jpeg)>]}>
+[2016-11-01 01:28:15] DEBUG [apps.file_server.views.insert_file:16] file_id: None
+[2016-11-01 01:29:43] DEBUG [apps.file_server.views.insert_file:14] request.post: <QueryDict: {u'csrfmiddlewaretoken': [u'1gWYL0sHAEThYD6pgd028sFgYwY7vzDv']}>
+[2016-11-01 01:29:43] DEBUG [apps.file_server.views.insert_file:15] request.files: <MultiValueDict: {u'file': [<InMemoryUploadedFile: ReciboParaPago.7645750205 (1).pdf (application/pdf)>]}>
+[2016-11-01 01:29:43] DEBUG [apps.file_server.views.insert_file:16] file_id: None
+[2016-11-01 01:30:51] DEBUG [apps.file_server.views.insert_file:14] request.post: <QueryDict: {u'csrfmiddlewaretoken': [u'1gWYL0sHAEThYD6pgd028sFgYwY7vzDv']}>
+[2016-11-01 01:30:51] DEBUG [apps.file_server.views.insert_file:15] request.files: <MultiValueDict: {u'file': [<InMemoryUploadedFile: 28628382282_095e019a6b_z.jpg (image/jpeg)>]}>
+[2016-11-01 01:30:51] DEBUG [apps.file_server.views.insert_file:16] file_id: None
+[2016-11-01 01:32:44] DEBUG [apps.file_server.views.insert_file:14] request.post: <QueryDict: {u'csrfmiddlewaretoken': [u'1gWYL0sHAEThYD6pgd028sFgYwY7vzDv']}>
+[2016-11-01 01:32:44] DEBUG [apps.file_server.views.insert_file:15] request.files: <MultiValueDict: {u'file': [<InMemoryUploadedFile: 28628382282_095e019a6b_z.jpg (image/jpeg)>]}>
+[2016-11-01 01:32:44] DEBUG [apps.file_server.views.insert_file:16] file_id: None
+[2016-11-01 01:40:49] DEBUG [apps.file_server.views.insert_file:14] request.post: <QueryDict: {u'csrfmiddlewaretoken': [u'1gWYL0sHAEThYD6pgd028sFgYwY7vzDv']}>
+[2016-11-01 01:40:49] DEBUG [apps.file_server.views.insert_file:15] request.files: <MultiValueDict: {u'file': [<InMemoryUploadedFile: tito_bogota_cali.pdf (application/pdf)>]}>
+[2016-11-01 01:40:49] DEBUG [apps.file_server.views.insert_file:16] file_id: None
+[2016-11-01 01:40:49] DEBUG [apps.file_server.views.insert_file:31] filename: tito_bogota_cali.pdf
+[2016-11-01 01:40:49] DEBUG [apps.file_server.views.insert_file:34] input_file_path: /datos/Kiosco/tito_bogota_cali.pdf_20161101014049
+[2016-11-01 01:40:49] DEBUG [apps.file_server.views.insert_file:44] input_file_form: <tr><th><label for="id_name">File name:</label></th><td><input id="id_name" maxlength="300" name="name" type="text" value="tito_bogota_cali.pdf" /></td></tr>
+<tr><th><label for="id_url">URL or location of the file:</label></th><td><input id="id_url" maxlength="500" name="url" type="text" value="/datos/Kiosco/tito_bogota_cali.pdf_20161101014049" /></td></tr>
+<tr><th><label for="id_from_date">Starting date in file:</label></th><td><input id="id_from_date" name="from_date" type="text" /></td></tr>
+<tr><th><label for="id_to_date">Finishing date in file:</label></th><td><input id="id_to_date" name="to_date" type="text" /></td></tr>
+<tr><th><label for="id_filesize">File Size:</label></th><td><input id="id_filesize" name="filesize" type="number" value="345" /></td></tr>
+<tr><th><label for="id_is_public">Should the file be public?</label></th><td><input id="id_is_public" name="is_public" type="checkbox" /></td></tr>
+<tr><th><label for="id_data_pending">Is there any pending data in the file?</label></th><td><input checked="checked" id="id_data_pending" name="data_pending" type="checkbox" /></td></tr>
+[2016-11-01 01:40:49] DEBUG [apps.file_server.views.insert_file:50] File stored in DB: tito_bogota_cali.pdf - /datos/Kiosco/tito_bogota_cali.pdf_20161101014049
+[2016-11-01 01:41:29] DEBUG [apps.file_server.views.insert_file:14] request.post: <QueryDict: {u'csrfmiddlewaretoken': [u'1gWYL0sHAEThYD6pgd028sFgYwY7vzDv']}>
+[2016-11-01 01:41:29] DEBUG [apps.file_server.views.insert_file:15] request.files: <MultiValueDict: {u'file': [<InMemoryUploadedFile: sierra_circular.jpeg (image/jpeg)>]}>
+[2016-11-01 01:41:29] DEBUG [apps.file_server.views.insert_file:16] file_id: None
+[2016-11-01 01:41:29] DEBUG [apps.file_server.views.insert_file:31] filename: sierra_circular.jpeg
+[2016-11-01 01:41:29] DEBUG [apps.file_server.views.insert_file:34] input_file_path: /datos/Kiosco/sierra_circular.jpeg_20161101014129
+[2016-11-01 01:41:29] DEBUG [apps.file_server.views.insert_file:44] input_file_form: <tr><th><label for="id_name">File name:</label></th><td><input id="id_name" maxlength="300" name="name" type="text" value="sierra_circular.jpeg" /></td></tr>
+<tr><th><label for="id_url">URL or location of the file:</label></th><td><input id="id_url" maxlength="500" name="url" type="text" value="/datos/Kiosco/sierra_circular.jpeg_20161101014129" /></td></tr>
+<tr><th><label for="id_from_date">Starting date in file:</label></th><td><input id="id_from_date" name="from_date" type="text" /></td></tr>
+<tr><th><label for="id_to_date">Finishing date in file:</label></th><td><input id="id_to_date" name="to_date" type="text" /></td></tr>
+<tr><th><label for="id_filesize">File Size:</label></th><td><input id="id_filesize" name="filesize" type="number" value="345" /></td></tr>
+<tr><th><label for="id_is_public">Should the file be public?</label></th><td><input id="id_is_public" name="is_public" type="checkbox" /></td></tr>
+<tr><th><label for="id_data_pending">Is there any pending data in the file?</label></th><td><input checked="checked" id="id_data_pending" name="data_pending" type="checkbox" /></td></tr>
+[2016-11-01 01:41:29] DEBUG [apps.file_server.views.insert_file:50] File stored in DB: sierra_circular.jpeg - /datos/Kiosco/sierra_circular.jpeg_20161101014129
+[2016-11-01 01:46:38] DEBUG [apps.file_server.views.insert_file:67] <tr><th><label for="id_name">File name:</label></th><td><input id="id_name" maxlength="300" name="name" type="text" /></td></tr>
+<tr><th><label for="id_url">URL or location of the file:</label></th><td><input id="id_url" maxlength="500" name="url" type="text" /></td></tr>
+<tr><th><label for="id_from_date">Starting date in file:</label></th><td><input id="id_from_date" name="from_date" type="text" /></td></tr>
+<tr><th><label for="id_to_date">Finishing date in file:</label></th><td><input id="id_to_date" name="to_date" type="text" /></td></tr>
+<tr><th><label for="id_filesize">File Size:</label></th><td><input id="id_filesize" name="filesize" type="number" /></td></tr>
+<tr><th><label for="id_is_public">Should the file be public?</label></th><td><input id="id_is_public" name="is_public" type="checkbox" /></td></tr>
+<tr><th><label for="id_data_pending">Is there any pending data in the file?</label></th><td><input checked="checked" id="id_data_pending" name="data_pending" type="checkbox" /></td></tr>
+[2016-11-01 01:46:44] DEBUG [apps.file_server.views.insert_file:14] request.post: <QueryDict: {u'csrfmiddlewaretoken': [u'1gWYL0sHAEThYD6pgd028sFgYwY7vzDv']}>
+[2016-11-01 01:46:44] DEBUG [apps.file_server.views.insert_file:15] request.files: <MultiValueDict: {u'file': [<InMemoryUploadedFile: tito_bogota_cali.pdf (application/pdf)>]}>
+[2016-11-01 01:46:44] DEBUG [apps.file_server.views.insert_file:16] file_id: None
+[2016-11-01 01:46:44] DEBUG [apps.file_server.views.insert_file:31] filename: tito_bogota_cali.pdf
+[2016-11-01 01:46:44] DEBUG [apps.file_server.views.insert_file:34] input_file_path: /datos/Kiosco/tito_bogota_cali.pdf_20161101014644
+[2016-11-01 01:46:44] DEBUG [apps.file_server.views.insert_file:44] input_file_form: <tr><th><label for="id_name">File name:</label></th><td><input id="id_name" maxlength="300" name="name" type="text" value="tito_bogota_cali.pdf" /></td></tr>
+<tr><th><label for="id_url">URL or location of the file:</label></th><td><input id="id_url" maxlength="500" name="url" type="text" value="/datos/Kiosco/tito_bogota_cali.pdf_20161101014644" /></td></tr>
+<tr><th><label for="id_from_date">Starting date in file:</label></th><td><input id="id_from_date" name="from_date" type="text" /></td></tr>
+<tr><th><label for="id_to_date">Finishing date in file:</label></th><td><input id="id_to_date" name="to_date" type="text" /></td></tr>
+<tr><th><label for="id_filesize">File Size:</label></th><td><input id="id_filesize" name="filesize" type="number" value="345" /></td></tr>
+<tr><th><label for="id_is_public">Should the file be public?</label></th><td><input id="id_is_public" name="is_public" type="checkbox" /></td></tr>
+<tr><th><label for="id_data_pending">Is there any pending data in the file?</label></th><td><input checked="checked" id="id_data_pending" name="data_pending" type="checkbox" /></td></tr>
+[2016-11-01 01:46:44] DEBUG [apps.file_server.views.insert_file:50] File stored in DB: tito_bogota_cali.pdf - /datos/Kiosco/tito_bogota_cali.pdf_20161101014644
