@@ -75,3 +75,6 @@ class ProductListTest(TestCase):
                 self.assertTrue(isinstance(p, Product))
                 response = self.client.get(reverse('shop:product_list'))
                 self.assertEqual(response.status_code, 200)
+                self.assertEqual(response.context['category'], None)
+                self.assertQuerysetEqual(response.context['categories'], ['<Category: exportaciones>'])
+                self.assertQuerysetEqual(response.context['products'], ['<Product: exportaciones_bolivia>'])
