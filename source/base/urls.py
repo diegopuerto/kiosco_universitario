@@ -20,6 +20,6 @@ urlpatterns = [
     url(r'^storage/', include('apps.storage_files_server.urls')),
 #     url(r'^accounts/', include('registration.backends.hmac.urls')),
     url(r'^shop/', include('apps.shop.urls', namespace = "shop")),
-#    url(r'^cart/', include('apps.cart.urls', namespace = "cart")),
+    url(r'^cart/', include('apps.cart.urls', namespace = "cart")),
     url(r'^file_server/', include('apps.file_server.urls', namespace = "file_server")),
     url(r'^$', include('apps.kiosco_app.urls'))]

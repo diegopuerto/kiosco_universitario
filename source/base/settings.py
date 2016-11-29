@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'apps.services_requests',                  
     'apps.storage_files_server',                  
     'apps.shop',
-#    'apps.cart',
+    'apps.cart',
     'apps.file_server',
     'django.contrib.admin',
     'django.contrib.auth',
