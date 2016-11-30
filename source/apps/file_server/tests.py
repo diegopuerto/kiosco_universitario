@@ -1,6 +1,7 @@
 from django.test import TestCase
 from datetime import datetime
-from .models import InputFile 
+from .models import InputFile
+from .models import InputFileForm
 
 class InputFileTest(TestCase):
 
@@ -11,3 +12,10 @@ class InputFileTest(TestCase):
                 i = self.create_InputFile()
                 self.assertTrue(isinstance(i, InputFile))
                 self.assertEqual(i.__str__(), "%s - %s" %(i.name, i.url))
+
+class InputFileFormTest(TestCase):
+        def test_form(self):
+                form_data = {'name':'importaciones mexico', 'url': '/archivos/cualquier_carpeta', 'from_date': datetime.now(), 'to_date': datetime.now(), 'filesize': 24, 'is_public': True, 'data_pending': True}
+                form = InputFileForm(data=form_data)
+                self.assertTrue(form.is_valid())
+
