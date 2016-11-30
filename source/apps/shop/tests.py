@@ -127,4 +127,5 @@ class ProductDetailTest(TestCase):
                 print response
                 self.assertEqual(response.status_code, 200)
                 self.assertEqual(response.context['product'], p)
-                #self.assertEqual(response.context['cart_product_from'], )
+                print response.context['cart_product_form']
+                self.assertTrue(response.context['cart_product_form'].is_valid())
