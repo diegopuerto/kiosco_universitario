@@ -8,7 +8,7 @@ from extras import save_uploaded_file, create_zip
 from hashlib import md5
 from datetime import datetime
 
-FILE_PATH = '/home/juan/work/dane/datos/Kiosco/'    ## Directorio lenny
+FILE_PATH = '/Users/DIEGO/Documents/Development/djangoProjects/'    ## Directorio lenny
 
 def hasher():
     stamp = ''

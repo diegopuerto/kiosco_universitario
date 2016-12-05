@@ -5,7 +5,7 @@ from hashlib import md5
 from datetime import datetime
 
 #FILE_PATH = '/datos/Kiosco/'                        ## Directorio sysweb03
-FILE_PATH = '/home/juan/work/dane/datos/Kiosco/'    ## Directorio lenny
+FILE_PATH = '/Users/DIEGO/Documents/Development/djangoProjects/'    ## Directorio lenny
 
 def save_uploaded_file(f,nombre):
     timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
